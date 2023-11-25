@@ -389,9 +389,9 @@ input::-webkit-inner-spin-button {
         padding: 1rem 8rem;
         width: 100%;
     }
-    /* .Calc-Content{
+    .Calc-Content{
         padding: 1rem;
-    }     */
+    } 
     /* .Calc-Heading .theme-switcher {
         width: 6rem;
         height: 2rem;
