@@ -99,20 +99,10 @@ Calc_operations.forEach(operation => {
 Calcinput.addEventListener('input', () => {
     const inputValue = Calcinput.value;
     const lastCharacter = inputValue[inputValue.length - 1];
-    const numbersvalidation = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const Lowercase = ['q', 'w', 'a', 's', 'd', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'f', 'g', 'h', 'j', 'k', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm',];
-    const Uppercase = Lowercase.map((e) => {
-        return e.toUpperCase();
-    })
-    const unvalidchar = ['!', '@', '#', '$', '%', '^', '&', '(', ')', '_', '[', ']', '{', '}', '|', '\\', ':', ';', '"', "'", '<', '>', ',', '?', '`', '~']
-    if (Lowercase.includes(lastCharacter) || Uppercase.includes(lastCharacter) || unvalidchar.includes(lastCharacter)) {
+    const validOperations = ['+', '-', '*', '/', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+
+    if (!(validOperations.includes(lastCharacter))) {
         Calcinput.value = inputValue.slice(0, -1);
-    }
-    if (Calcinput.value == 0) {
-        if (numbersvalidation.includes(lastCharacter)) {
-            Calcinput.value = '';
-            Calcinput.value = inputValue.slice(0, -1);
-        }
     }
 });
 
