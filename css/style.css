@@ -422,7 +422,7 @@ input::-webkit-inner-spin-button {
         width: 100%;
     }
 }
-@media (max-width: 430px) and (min-width:413px) {
+@media (max-width: 432px) and (min-width:413px) {
     .Calc-Content .numbers{
         width: 3.7rem;
     }
