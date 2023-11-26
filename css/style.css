@@ -390,7 +390,7 @@ input::-webkit-inner-spin-button {
         width: 100%;
     }
     .Calc-Content{
-        padding: 1rem;
+        padding: 1rem 1.5rem;
     }    
     /* .Calc-Heading .theme-switcher {
         width: 6rem;
