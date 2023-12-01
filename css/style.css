@@ -107,7 +107,6 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    height: 100%;
 }
 
 * {
@@ -120,7 +119,7 @@ body {
     background-color: var(--theme1-color);
     display: flex;
     justify-content: center;
-    align-items: center;
+
 }
 
 .light {
@@ -202,6 +201,8 @@ body {
 
 .container {
     margin: 2rem 32rem;
+    width: 100%;
+    position: relative;
 }
 
 .Calc-Heading {
@@ -364,12 +365,10 @@ input::-webkit-inner-spin-button {
     }
 }
 
-@media (max-width: 468px) and (min-width:386px) {
+@media (max-width: 468px) and (min-width:286px) {
     .container {
-        width: 750px;
-        margin: 4rem 2rem;
-        margin-top: 4rem;
-        margin-bottom: 7rem;
+        height: 80vh;
+        margin: 6rem;
     }
     .Calc-Screen input{
         padding: 0rem;
@@ -424,7 +423,7 @@ input::-webkit-inner-spin-button {
 }
 @media (max-width: 432px) and (min-width:413px) {
     .Calc-Content .numbers{
-        width: 3.7rem;
+        width: 3.6rem;
     }
     .reset-btn {
         padding: 1rem 8.2rem;
@@ -433,47 +432,13 @@ input::-webkit-inner-spin-button {
     .equal-btn{
         padding: 1rem 8.2rem;
         width: 100%;
-    }
-}
-
-@media (max-width: 368px) and (min-width:286px) {
-    /* .Calc-Content{
-        padding: 0.8rem;
-    } */
-    .container {
-        width: 750px;
-        margin: 4rem 1rem;
-        margin-top: 4rem;
-        margin-bottom: 8rem;
-    }
-    .Calc-Screen input{
-        padding: 0rem;
-        font-size: 1.5rem;
-    }
-    .Calc-Content .numbers{
-        width: 3.2rem;
-        height: 3rem;
-        margin: 0.3rem;
-        font-size: 1rem;
-    }
-    .reset-btn {
-        padding: 1rem 7.3rem;
-        width: 100%;
-    }
-    .equal-btn{
-        padding: 1rem 7.3rem;
-        width: 100%;
-    }
-    .Calc-Content{
-        padding: 0.5rem;
     }
 }
 @media (max-width: 286px) and (min-width: 226px) {
     .Calc-Content{
-        padding: 0.5rem;
+        padding: 0.7rem;
     }
     .container {
-        width: 750px;
         margin: 4rem 0.5rem;
         margin-top: 4rem;
         margin-bottom: 8rem;
@@ -483,17 +448,17 @@ input::-webkit-inner-spin-button {
         font-size: 1.5rem;
     }
     .Calc-Content .numbers{
-        width: 3rem;
+        width: 2.8rem;
         height: 3rem;
         margin: 0.3rem;
         font-size: 1rem;
     }
     .reset-btn {
-        padding: 1rem 8.2rem;
+        padding: 1rem 6.4rem;
         width: 100%;
     }
     .equal-btn{
-        padding: 1rem 8.2rem;
+        padding: 1rem 6.4rem;
         width: 100%;
     }
 }
