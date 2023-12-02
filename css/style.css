@@ -344,24 +344,42 @@ input::-webkit-inner-spin-button {
 /* Small */
 @media (max-width: 768px) and (min-width:486px) {
     .container {
-        width: 750px;
-        margin: 0rem 2rem;
+        margin: 2rem 1rem;
     }
 }
 
 /* Medium */
-@media (max-width: 992px) and (min-width:768px) {
+@media (max-width: 992px) and (min-width:819px) {
     .container {
-        width: 970px;
-        margin: 2rem 16rem;
+        margin: 0rem 9rem;
+        margin-top: 8rem;
+        height: 92vh;
     }
+    .Calc-Content{
+        padding: 1rem;
+    } 
+}
+@media (max-width: 819px) and (min-width:768px) {
+    .container {
+        margin: 0rem 8rem;
+        margin-top: 8rem;
+        height: 92vh;
+    }
+    .Calc-Content{
+        padding: 1rem;
+    } 
 }
 
 /* Large */
-@media (max-width: 1286px) and (min-width:992px) {
+@media (max-width: 1286px) and (min-width:1024px) {
     .container {
-        width: 1170px;
-        margin: 2rem 24rem;
+        margin: 3rem 24rem;
+    }
+}
+@media (max-width: 1024px) and (min-width:992px) {
+    .container {
+        height: 100vh;
+        margin: 3rem 12rem;
     }
 }
 
