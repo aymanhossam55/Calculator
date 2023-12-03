@@ -97,18 +97,10 @@ Calc_operations.forEach(operation => {
 });
 
 
-const allowedCharacters = /[+\-*/0-9\b]/; // Regular expression to allow specific characters (including backspace)
-
-document.addEventListener('keypress', event => {
-  const key = event.key;
-  if (!allowedCharacters.test(key)) {
-    event.preventDefault();
-  }
-});
-
 Calcinput.addEventListener('input', event => {
   const inputValue = event.target.value;
-  event.target.value = inputValue.replace(new RegExp(`[^${allowedCharacters.source}]+`, 'g'), '');
+  const sanitizedValue = inputValue.replace(/[^+\-*/0-9]/g, '');
+  event.target.value = sanitizedValue;
 });
 
 Calc_delete_btn.onclick = () => {
