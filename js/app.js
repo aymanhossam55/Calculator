@@ -103,7 +103,7 @@ Calcinput.addEventListener('keypress', event => {
 
 const allowedCharacters = /[+\-*/0-9\b]/; // Regular expression to allow specific characters (including backspace)
 
-document.addEventListener('keydown', event => {
+Calcinput.addEventListener('keydown', event => {
     const key = event.key;
     if (!allowedCharacters.test(key)) {
         event.preventDefault();
