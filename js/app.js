@@ -84,6 +84,7 @@ Calc_numbers.forEach(number => {
             clickednumber = number.textContent;
             Calcinput.value += clickednumber;
         }
+
     })
 
 });
@@ -95,24 +96,19 @@ Calc_operations.forEach(operation => {
     })
 });
 
-Calcinput.addEventListener('keypress', event => {
-    const keyPressed = event.key;
-    handleNumberInput(keyPressed);
-});
-
 
 const allowedCharacters = /[+\-*/0-9\b]/; // Regular expression to allow specific characters (including backspace)
 
-Calcinput.addEventListener('keydown', event => {
-    const key = event.key;
-    if (!allowedCharacters.test(key)) {
-        event.preventDefault();
-    }
+document.addEventListener('keypress', event => {
+  const key = event.key;
+  if (!allowedCharacters.test(key)) {
+    event.preventDefault();
+  }
 });
 
 Calcinput.addEventListener('input', event => {
-    const inputValue = event.target.value;
-    event.target.value = inputValue.replace(new RegExp(`[^${allowedCharacters.source}]+`, 'g'), '');
+  const inputValue = event.target.value;
+  event.target.value = inputValue.replace(new RegExp(`[^${allowedCharacters.source}]+`, 'g'), '');
 });
 
 Calc_delete_btn.onclick = () => {
@@ -142,8 +138,3 @@ reset_btn.onclick = () => {
 dot_btn.onclick = () => {
     Calcinput.value += ".";
 }
-
-
-
-
-
