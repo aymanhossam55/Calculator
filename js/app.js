@@ -18,7 +18,7 @@ let counter = 1;
 
 themeball.onclick = () => {
     if (counter == 1) {
-        themeball.style = "margin-left:1.5rem; animation-name: theme-ball; animation-duration: 0.2s; animation-timing-function: linear;";
+        themeball.style = "margin-left:2.2rem; animation-name: theme-ball; animation-duration: 0.2s; animation-timing-function: linear;";
         themeball.classList.add("light-theme-switcher-ball");
         themeSwitch.classList.add("light-theme-switcher");
         Calc_title.forEach(e => e.classList.add("light-text"));
@@ -32,7 +32,7 @@ themeball.onclick = () => {
         counter++;
     }
     else if (counter == 2) {
-        themeball.style = "margin-left:3rem; animation-name: theme-2; animation-duration: 0.2s; animation-timing-function: linear;";
+        themeball.style = "margin-left:4rem; animation-name: theme-2; animation-duration: 0.2s; animation-timing-function: linear;";
         themeball.classList.add("dark-theme-switcher-ball");
         themeSwitch.classList.add("dark-theme-switcher");
         Calc_title.forEach(e => e.classList.add("dark-text"));
