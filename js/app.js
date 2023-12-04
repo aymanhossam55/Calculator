@@ -103,9 +103,7 @@ Calcinput.addEventListener('input', event => {
   event.target.value = sanitizedValue;
 });
 
-Calc_delete_btn.onclick = () => {
-    Calcinput.value = Calcinput.value.slice(0, -1);
-}
+let err = true;
 
 equal_btn.onclick = () => {
     let expression = Calcinput.value;
@@ -122,22 +120,33 @@ equal_btn.onclick = () => {
         }
         expression = expression.replace(ele, ele.substr(i));
     });
+
     let result;
 
     try {
         result = eval(expression);
         if (!isFinite(result) || isNaN(result)) {
+            err = false;
             Calcinput.value = 'Math Error';
         } else {
             Calcinput.value = result;
         }
     } catch (error) {
+        err = false;
         Calcinput.value = 'Math Error';
-        Calc_delete_btn.onclick = () => {
-            Calcinput.value = ''
-        }
     }
 };
+
+
+let handledelete = Calc_delete_btn.onclick = () => {
+    if(err){
+    Calcinput.value = Calcinput.value.slice(0, -1);
+    }
+    else{
+        Calcinput.value = '';
+    }
+    err = true;
+}
 
 reset_btn.onclick = () => {
     Calcinput.value = '';
