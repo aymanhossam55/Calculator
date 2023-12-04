@@ -91,7 +91,7 @@ Calc_numbers.forEach(number => {
 
 Calc_operations.forEach(operation => {
     operation.addEventListener('click', () => {
-        clickedoperation = operation.innerHTML;
+        clickedoperation = operation.textContent;
         Calcinput.value += clickedoperation;
     })
 });
