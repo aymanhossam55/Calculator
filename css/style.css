@@ -209,7 +209,7 @@ body {
     display: flex;
     justify-content: space-between;
     color: var(--color-title);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .Calc-Heading .theme {
