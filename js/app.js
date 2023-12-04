@@ -108,7 +108,20 @@ Calc_delete_btn.onclick = () => {
 }
 
 equal_btn.onclick = () => {
-    const expression = Calcinput.value;
+    let expression = Calcinput.value;
+    let res = expression.match(/0+[1-9]+/g);
+    res.forEach((ele) => {
+        let i = 0;
+        while (i < ele.length) {
+            if (ele[i] == '0') { 
+                i++;
+                continue; 
+            }
+            else 
+                break;
+        }
+        expression = expression.replace(ele, ele.substr(i));
+    });
     let result;
 
     try {
