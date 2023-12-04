@@ -460,6 +460,34 @@ input::-webkit-inner-spin-button {
         width: 100%;
     }
 }
+@media (max-width: 335px) and (min-width: 286px) {
+    .Calc-Content{
+        padding: 1rem;
+    }
+    .container {
+        margin: 4rem 0.5rem;
+        margin-top: 4rem;
+        margin-bottom: 8rem;
+    }
+    .Calc-Screen input{
+        padding: 0rem;
+        font-size: 1.5rem;
+    }
+    .Calc-Content .numbers{
+        width: 2.6rem;
+        height: 3rem;
+        margin: 0.3rem;
+        font-size: 1rem;
+    }
+    .reset-btn {
+        padding: 1rem 6.1rem;
+        width: 100%;
+    }
+    .equal-btn{
+        padding: 1rem 6.1rem;
+        width: 100%;
+    }
+}
 @media (max-width: 286px) and (min-width: 226px) {
     .Calc-Content{
         padding: 0.7rem;
@@ -488,4 +516,5 @@ input::-webkit-inner-spin-button {
         width: 100%;
     }
 }
+
 
