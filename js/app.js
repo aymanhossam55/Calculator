@@ -133,6 +133,9 @@ equal_btn.onclick = () => {
         }
     } catch (error) {
         Calcinput.value = 'Math Error';
+        Calc_delete_btn.onclick = () => {
+            Calcinput.value = ''
+        }
     }
 };
 
