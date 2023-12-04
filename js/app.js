@@ -99,7 +99,7 @@ Calc_operations.forEach(operation => {
 
 Calcinput.addEventListener('input', event => {
   const inputValue = event.target.value;
-  const sanitizedValue = inputValue.replace(/[^+\-*/0-9]/g, '');
+  const sanitizedValue = inputValue.replace(/[^.+\-*/0-9]/g, '');
   event.target.value = sanitizedValue;
 });
 
