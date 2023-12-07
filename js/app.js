@@ -103,7 +103,7 @@ Calcinput.addEventListener('input', event => {
   event.target.value = sanitizedValue;
 });
 
-let err = true;
+let isError = false;
 
 equal_btn.onclick = () => {
     let expression = Calcinput.value;
@@ -111,11 +111,11 @@ equal_btn.onclick = () => {
     res.forEach((ele) => {
         let i = 0;
         while (i < ele.length) {
-            if (ele[i] == '0') { 
+            if (ele[i] == '0') {
                 i++;
-                continue; 
+                continue;
             }
-            else 
+            else
                 break;
         }
         expression = expression.replace(ele, ele.substr(i));
@@ -126,30 +126,56 @@ equal_btn.onclick = () => {
     try {
         result = eval(expression);
         if (!isFinite(result) || isNaN(result)) {
-            err = false;
             Calcinput.value = 'Math Error';
+            isError = true;
+            disableButtons();
+            enableErrButtons();
         } else {
             Calcinput.value = result;
         }
     } catch (error) {
-        err = false;
+        isError = true;
         Calcinput.value = 'Math Error';
+        disableButtons();
+        enableErrButtons();
     }
 };
 
-
-let handledelete = Calc_delete_btn.onclick = () => {
-    if(err){
+function deleteLastCharacter() {
+    if (isError) {
+        return;
+    }
     Calcinput.value = Calcinput.value.slice(0, -1);
+}
+
+function disableButtons() {
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i].disabled = true;
     }
-    else{
-        Calcinput.value = '';
+}
+function enableErrButtons() {
+    reset_btn.disabled = false;
+    Calc_delete_btn.disabled = false;
+}
+function enableAllButtons() {
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i].disabled = false;
     }
-    err = true;
+}
+
+function reset() {
+    isError = false;
+    Calcinput.value = '';
+    enableAllButtons();
+}
+
+Calc_delete_btn.onclick = () => {
+    deleteLastCharacter();
 }
 
 reset_btn.onclick = () => {
     Calcinput.value = '';
+    reset();
 }
 
 dot_btn.onclick = () => {
